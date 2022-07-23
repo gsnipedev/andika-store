@@ -1,38 +1,25 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
-
+import DiscoverPage from "./components/Discover";
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 import ResponsiveAppBar from "./components/MainNavBar";
-import { display } from "@mui/system";
-import SelectInput from "@mui/material/Select/SelectInput";
-import MainItem from "./components/MainItem";
-import { Box, Container, Stack } from "@mui/material";
-import CardCategory from "./components/CardCategory";
+import Home from "./components/Home";
 
 function App() {
-  const [myText, setMyText] = useState("Andika was here");
-  const [count, setCount] = useState(0);
-  const [color, setColor] = useState("Default");
-  const categories = ["Handgun", "Assault Rifle", "Shotgun", "SMG"];
-  const imageSources = ["images/glock.webp", "images/ak47.jpg", "images/shotgun.webp"];
-  const selectColor = (e) => {
-    setColor(e.target.value);
-  };
-  const page2 = <div>keren</div>;
   return (
     <div className="App">
-      <ResponsiveAppBar pages={["Home", "Discover", "About"]} name="awdaf" />
-      <Stack>
-        <MainItem />
-        <h1 className="roboto-condensed">Category</h1>
-        <Container>
-          <Box sx={{ display: { xs: "flex" } }}>
-            {categories.map((title, index) => (
-              <CardCategory title={title} src={imageSources[index]} />
-            ))}
-          </Box>
-        </Container>
-      </Stack>
+      <ResponsiveAppBar pages={["Home", "Discover", "About"]} />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />}></Route>
+          <Route path="Discover" element={<DiscoverPage />}></Route>
+          <Route path="Profile" element={<h1>Ini Profile</h1>}></Route>
+        </Routes>
+      </BrowserRouter>
+      <footer style={{ bottom: 0, marginBottom: 20, color: "crimson", textDecoration: "underline" }}>
+        <span>Made with love by Andika</span>
+      </footer>
     </div>
   );
 }

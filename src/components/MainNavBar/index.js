@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 
 const MyTheme = createTheme({
   palette: {
@@ -48,7 +49,7 @@ const ResponsiveAppBar = (props) => {
   return (
     <ThemeProvider theme={MyTheme}>
       <AppBar position="static" sx={{ backgroundColor: "primary.main", boxShadow: 2 }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Toolbar disableGutters>
             <VideogameAssetIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1, color: "secondary.main" }} />
             <Typography
@@ -100,12 +101,14 @@ const ResponsiveAppBar = (props) => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textAlign="center">
+                      <span onClick={(e) => (window.location.href = page === "Home" ? "/" : page)}>{page}</span>
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            <VideogameAssetIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <VideogameAssetIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: "secondary.main" }} />
             <Typography
               variant="h6"
               noWrap
@@ -118,7 +121,7 @@ const ResponsiveAppBar = (props) => {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: "0rem",
-                color: "inherit",
+                color: "secondary.main",
                 textDecoration: "none",
               }}
             >
@@ -127,6 +130,7 @@ const ResponsiveAppBar = (props) => {
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
+                  href={page === "Home" ? "/" : page}
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block", textTransform: "none" }}
@@ -160,7 +164,9 @@ const ResponsiveAppBar = (props) => {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    <Typography textAlign="center">
+                      <span onClick={(e) => (window.location.href = setting)}>{setting}</span>
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>

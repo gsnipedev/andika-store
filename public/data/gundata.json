@@ -1,0 +1,45 @@
+{
+    "Handgun": {
+        "Glock22": {
+            "price": 799,
+            "magsize": 17,
+            "desc": "gun",
+            "caliber": "9mm"
+        },
+        "Colt M1911": {
+            "price": 899,
+            "magsize": 7,
+            "desc": "gun",
+            "caliber": ".45 ACP"
+        }
+    },
+    "Assault Rifle": {
+        "AK-47" : {
+            "price" : 1299,
+            "magsize" : 30,
+            "desc" : "gun",
+            "caliber" : "7.62"
+        },
+        "AR-15" : {
+            "price" : 1499,
+            "magsize" : 30,
+            "desc" : "gun",
+            "caliber" : "5.56"
+        }
+    },
+    "Shotgun" : {
+        "Remington Model 870" : {
+            "price" : 599,
+            "magsize" : 8,
+            "desc" : "gun",
+            "caliber" : "12 Gauge"
+        },
+        "Benelli M1014" : {
+            "price" : 699,
+            "magsize" : 7,
+            "desc" : "gun",
+            "caliber" : "12 Gauge"
+        }
+    }
+    
+}
