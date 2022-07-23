@@ -38,7 +38,9 @@ const ResponsiveAppBar = (props) => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (page) => {
+    window.location.href = page === "Home" ? "/" : page;
+    console.log(page);
     setAnchorElNav(null);
   };
 
@@ -100,10 +102,8 @@ const ResponsiveAppBar = (props) => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">
-                      <span onClick={(e) => (window.location.href = page === "Home" ? "/" : page)}>{page}</span>
-                    </Typography>
+                  <MenuItem key={page} onClick={(page) => handleCloseNavMenu(page.currentTarget.textContent)}>
+                    <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
               </Menu>

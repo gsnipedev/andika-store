@@ -36,7 +36,7 @@ const MainItem = () => {
       <Container maxWidth="lg" sx={{ marginTop: 2, backgroundColor: "#FBFBFF", borderRadius: 3 }} disableGutters>
         <Box
           sx={{
-            display: { xs: "block", md: "flex", lg: "flex", xl: "flex" },
+            display: { xs: "block", sm: "block", md: "flex", lg: "flex", xl: "flex" },
             border: 0,
             justifyContent: "space-around",
             maxWidth: 1,
@@ -48,14 +48,26 @@ const MainItem = () => {
             <Typography sx={{ color: "#093A3E", fontSize: 50, fontWeight: "bold" }}>
               <span className="roboto-condensed">Glock 22</span>
             </Typography>
-            <Typography sx={{ fontStyle: "italic", color: "#818D92", textAlign: "left" }}>
+            <Typography
+              sx={{
+                fontStyle: "italic",
+                color: "#818D92",
+              }}
+              align={"center"}
+            >
               <span>
                 The Glock 22 Gen 4 is a full-size service pistol, shooting the 9x19mm pistol cartridge
                 <br />
                 (9mm Parabellum), a standard military round that's easy to find ammo for anywhere.
               </span>
             </Typography>
-            <Stack direction={"row"} spacing={10} sx={{ marginTop: 4 }} className="roboto-condensed">
+            <Stack
+              direction={"row"}
+              spacing={10}
+              sx={{ marginTop: 4 }}
+              className="roboto-condensed"
+              justifyContent={"center"}
+            >
               <Stack>
                 <p>Price</p>
                 <span>$699</span>
@@ -69,7 +81,7 @@ const MainItem = () => {
                 <span>$699</span>
               </Stack>
             </Stack>
-            <Stack direction={"row"}>
+            <Stack direction={"row"} justifyContent="center">
               <ThemeProvider theme={MyTheme}>
                 <Button variant="contained" sx={{ marginTop: 5, color: "#fff" }}>
                   Buy Now
@@ -81,7 +93,7 @@ const MainItem = () => {
             </Stack>
           </div>
           <div>
-            <img src="images/glock.png" width={350}></img>
+            <img src="images/glock.png" width={350} height="auto"></img>
           </div>
         </Box>
       </Container>
