@@ -1,20 +1,4 @@
-import {
-  Button,
-  AppBar,
-  Box,
-  Toolbar,
-  Menu,
-  Container,
-  Typography,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Stack,
-  createTheme,
-  ThemeProvider,
-} from "@mui/material";
-import { display } from "@mui/system";
-import SelectInput from "@mui/material/Select/SelectInput";
+import { Box, Button, Container, createTheme, Stack, ThemeProvider, Typography } from "@mui/material";
 import "../../App.css";
 
 const MainItem = () => {
@@ -29,11 +13,19 @@ const MainItem = () => {
     },
   });
   return (
-    <div>
+    <div style={{ padding: 10 }}>
       <Typography variant="h4" sx={{ marginTop: 2 }}>
         <span className="roboto-condensed">Best Seller</span>
       </Typography>
-      <Container maxWidth="lg" sx={{ marginTop: 2, backgroundColor: "#FBFBFF", borderRadius: 3 }} disableGutters>
+      <Container
+        maxWidth="lg"
+        sx={{
+          marginTop: 2,
+          backgroundColor: "#FBFBFF",
+          borderRadius: 3,
+        }}
+        disableGutters
+      >
         <Box
           sx={{
             display: { xs: "block", sm: "block", md: "flex", lg: "flex", xl: "flex" },
@@ -74,11 +66,13 @@ const MainItem = () => {
               </Stack>
               <Stack>
                 <p>Color</p>
-                <span>$699</span>
+                <span>
+                  <Box height={20} width={20} sx={{ backgroundColor: "black" }} />
+                </span>
               </Stack>
               <Stack>
                 <p>Mag Size</p>
-                <span>$699</span>
+                <span className="rubik">17</span>
               </Stack>
             </Stack>
             <Stack direction={"row"} justifyContent="center">
@@ -93,7 +87,7 @@ const MainItem = () => {
             </Stack>
           </div>
           <div>
-            <img src="images/glock.png" width={350} height="auto"></img>
+            <Box component={"img"} maxWidth={350} src="images/glock.png"></Box>
           </div>
         </Box>
       </Container>

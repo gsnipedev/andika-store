@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Grid, Stack, Typography } from "@mui/material";
+import { Box, Card, Grid, Typography } from "@mui/material";
 import "../../App.css";
 
 const GunCard = (props) => {
@@ -17,7 +17,7 @@ const GunCard = (props) => {
         }}
       >
         <Box sx={{ flexGrow: 1 }} onClick={() => (window.location.href = props.desc)}>
-          <img src={props.src} height={120}></img>
+          <Box component={"img"} src={props.src} maxHeight={120}></Box>
           <Typography variant="h3" color={"#F4AFAB"} fontSize={20}>
             <span className="roboto-condensed">{props.desc}</span>
           </Typography>
