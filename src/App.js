@@ -50,6 +50,7 @@ function App() {
             }
           ></Route>
           <Route path="About" element={<AboutPage />}></Route>
+          <Route path="Logout" element={<Home />}></Route>
         </Routes>
       </BrowserRouter>
       <MainFooter />

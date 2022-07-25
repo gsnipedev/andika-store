@@ -51,6 +51,7 @@ const MainFooter = () => {
                     <IconButton color="secondary" href="https://www.instagram.com/andika_wahyudi_/">
                       <Instagram />
                     </IconButton>
+
                     <IconButton color="secondary" href="https://github.com/gsnipedev">
                       <GitHub />
                     </IconButton>
